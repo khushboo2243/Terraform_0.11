@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Source environment'){
       steps {
-        sh 'source env-vars'
+        sh './var/lib/jenkins/workspace/source_env.sh'
       }
     }
     stage('TF Plan') {
