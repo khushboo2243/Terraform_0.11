@@ -3,7 +3,7 @@ pipeline {
   agent any
    
   environment {
-    SVC_ACCOUNT_KEY = credentials('terraform-auth')
+   // SVC_ACCOUNT_KEY = credentials('terraform-auth')
   }
   stages {
 
@@ -13,7 +13,11 @@ pipeline {
         
       }
     }
-
+    stage('Source environment'){
+      steps {
+        sh 'source env-vars'
+      }
+    }
     stage('TF Plan') {
       steps {
           
