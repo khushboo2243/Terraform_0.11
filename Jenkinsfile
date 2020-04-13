@@ -14,7 +14,7 @@ pipeline {
       }
     }
     
-     stage('change_dir') {
+    /* stage('change_dir') {
       steps {
         dir("/var/lib/jenkins/workspace/Terrafomr_0.11"){
           sh 'pwd'
@@ -25,12 +25,12 @@ pipeline {
         }
         
       }
-    }
-   /* stage('Source environment'){
-      steps {
-        sh './var/lib/jenkins/workspace/Terrafomr_0.11/source_env.sh'
-      }
     } */
+    stage('Source environment'){
+      steps {
+        sh './var/lib/jenkins/workspace/source_env.sh'
+      }
+    } 
     stage('TF Plan') {
       steps {
           
