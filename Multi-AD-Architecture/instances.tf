@@ -24,7 +24,7 @@ module "create_app" {
     compute_subnet                  = ["${module.create_appnet_subnet.subnetid}"]
     compute_ssh_public_key          = "${var.ssh_public_key}"
     compute_ssh_private_key         = "${var.ssh_private_key}"
-    bastion_ssh_private_key         = "${var.bastion_ssh_private_key}"
+  /*bastion_ssh_private_key         = "${var.bastion_ssh_private_key}" */
     bastion_public_ip               = "${module.create_bastion.Bastion_Public_IPs[0]}"
     compute_instance_listen_port    = "${var.app_instance_listen_port}"
     fss_instance_prefix             = "${var.env_prefix}-fss" //${substr(var.region, 3, 3)}"
