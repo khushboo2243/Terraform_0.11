@@ -29,12 +29,13 @@ pipeline {
     stage('Source environment'){
       steps {
         sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/env_vars'
-        sh 'printenv'
+        
       }
     } 
     stage('TF Plan') {
       steps {
         dir("Multi-AD-Architecture"){
+          sh 'echo $TF_VAR_bastion_ssh_private_key'
           sh 'terraform init'
           sh 'terraform plan'
         }
