@@ -29,7 +29,7 @@ pipeline {
     stage('Source environment'){
       steps {
         sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/env_vars'
-        sh 'TF_VAR_bastion_ssh_private_key'
+        sh '$TF_VAR_bastion_ssh_private_key'
       }
     } 
     stage('TF Plan') {
