@@ -29,6 +29,7 @@ pipeline {
     stage('Source environment'){
       steps {
         sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/env_vars'
+        sh 'env'
       }
     } 
     stage('TF Plan') {
