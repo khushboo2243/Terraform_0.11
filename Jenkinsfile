@@ -20,7 +20,7 @@ pipeline {
           sh 'pwd'
           sh 'whoami'
           sh 'env'
-          sh './source_env.sh'
+          sh './var/lib/jenkins/workspace/Terrafomr_0.11/source_env.sh'
 
         }
         
