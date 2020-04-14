@@ -46,14 +46,14 @@ pipeline {
           //sh 'source ./env_vars'
            sh 'pwd'
           sh 'whoami'
-          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars && env'
+          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars && env && chmod 600 /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/bastion_private_ssh_key && terraform init && terraform plan'
           sh 'sleep 10'
           //sh 'env'
-          sh 'chmod 600 /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/bastion_private_ssh_key'
+          //sh 'chmod 600 /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/bastion_private_ssh_key'
           sh 'sleep 10'
-          sh 'terraform init'
+          //sh 'terraform init'
           sh 'sleep 5'
-          sh 'terraform plan'
+          //sh 'terraform plan'
           
         }
       }      
