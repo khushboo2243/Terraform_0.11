@@ -20,8 +20,7 @@ pipeline {
           sh 'pwd'
           sh 'whoami'
           sh 'env'
-          sh 'sudo -s'
-          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
+          sh 'sudo -s source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
          // sh './var/lib/jenkins/workspace/Terrafomr_0.11/source_env.sh'
 
         }
