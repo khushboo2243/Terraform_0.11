@@ -14,7 +14,7 @@ pipeline {
       }
     }
     
-     stage('change_dir') {
+     /*stage('change_dir') {
       steps {
         dir("/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture"){
           sh 'pwd'
@@ -30,13 +30,14 @@ pipeline {
       }
     } 
 
-    /*stage('Source environment'){
+    stage('Source environment'){
       steps {
         dir("/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture"){
           sh '/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
         }
       }
     }*/
+
     stage('TF Plan') {
       steps {
         dir("Multi-AD-Architecture"){
