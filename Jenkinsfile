@@ -39,6 +39,7 @@ pipeline {
           sh 'pwd'
           sh 'terraform init'
           sh 'terraform plan'
+          sh 'terraform show -json'
         }
       }      
     }
