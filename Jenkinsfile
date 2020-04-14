@@ -28,19 +28,15 @@ pipeline {
         
       }
     } 
-    stage('Source environment'){
-      steps {
-        dir("/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture"){
-          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
-        }
-      }
-    }
 
     stage('TF Plan') {
       steps {
         dir("Multi-AD-Architecture"){
           sh 'pwd'
+          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
+          sh 'sleep 10'
           sh 'terraform init'
+          sh 'sleep 5'
           sh 'terraform plan'
           
         }
