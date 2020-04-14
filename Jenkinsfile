@@ -41,7 +41,8 @@ pipeline {
     stage('TF Plan') {
       steps {
         dir("Multi-AD-Architecture"){
-          try{
+          script{
+            try{
             sh 'pwd'
           sh 'ls -l'
           sh 'source ./env_vars'
@@ -53,8 +54,8 @@ pipeline {
           }catch(error){
             sh 'sleep 5'
             sh 'terraform plan'
-          }   
-          
+          }
+          }  
         }
       }      
     }
