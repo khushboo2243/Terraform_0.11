@@ -1,3 +1,4 @@
+#!/bin/bash
 export TF_LOG=INFO
 export TF_LOG_PATH="/var/lib/jenkins/workspace/multi.log"
 
