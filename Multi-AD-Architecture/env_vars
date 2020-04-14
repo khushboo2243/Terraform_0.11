@@ -1,5 +1,5 @@
 export TF_LOG=INFO
-export TF_LOG_PATH=~/.logs/multi.log
+export TF_LOG_PATH=~/var/lib/jenkins/workspace/multi.log
 
 #GLOBAL
 export TF_VAR_tenancy_ocid="ocid1.tenancy.oc1..aaaaaaaapf32iocmevidwi4ujtrnfvq456dp4elubzvw564v6lh2sby24uua"
