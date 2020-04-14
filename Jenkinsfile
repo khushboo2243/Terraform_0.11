@@ -28,7 +28,7 @@ pipeline {
     } 
     stage('Source environment'){
       steps {
-        sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
+        sh 'source env_vars'
      
       }
     } 
