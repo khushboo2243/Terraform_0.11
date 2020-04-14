@@ -16,16 +16,12 @@ pipeline {
     
      stage('change_dir') {
       steps {
-        dir("/var/lib/jenkins/workspace"){
-         sh 'sudo ./source_env.sh'
-        }
-
         dir("/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture"){
           sh 'pwd'
           sh 'whoami'
           sh 'env'
-          //sh 'sudo -s source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
-         sh 'sudo ./var/lib/jenkins/workspace/Terrafomr_0.11/source_env.sh'
+          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
+         //sh 'sudo ./var/lib/jenkins/workspace/Terrafomr_0.11/source_env.sh'
 
         }
         
