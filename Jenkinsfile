@@ -20,18 +20,19 @@ pipeline {
           sh 'pwd'
           sh 'whoami'
           sh 'env'
+          sh 'source env_vars'
          // sh './var/lib/jenkins/workspace/Terrafomr_0.11/source_env.sh'
 
         }
         
       }
     } 
-    stage('Source environment'){
+   /* stage('Source environment'){
       steps {
         sh 'source env_vars'
      
       }
-    } 
+    }*/ 
     stage('TF Plan') {
       steps {
         dir("Multi-AD-Architecture"){
