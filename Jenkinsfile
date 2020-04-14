@@ -16,7 +16,7 @@ pipeline {
     
      stage('change_dir') {
       steps {
-        dir("/var/lib/jenkins/workspace/Terrafmomr_0.11/Multi-AD-Architecture"){
+        dir("/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture"){
           sh 'pwd'
           sh 'whoami'
           sh 'env'
