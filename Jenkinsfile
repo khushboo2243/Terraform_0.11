@@ -29,18 +29,14 @@ pipeline {
         
       }
     } 
-<<<<<<< HEAD
 
-=======
-    stage('Source environment'){
+    /*stage('Source environment'){
       steps {
         dir("/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture"){
           sh '/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
         }
       }
-    }
-    
->>>>>>> 663af8b6e35cad602d4d4693db33bb562412d64b
+    }*/
     stage('TF Plan') {
       steps {
         dir("Multi-AD-Architecture"){
