@@ -31,11 +31,11 @@ pipeline {
     stage('Source environment'){
       steps {
         dir("/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture"){
-          sh '/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
+          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
         }
       }
     }
-    
+
     stage('TF Plan') {
       steps {
         dir("Multi-AD-Architecture"){
