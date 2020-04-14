@@ -40,26 +40,35 @@ pipeline {
 
     stage('TF Plan') {
       steps {
-        dir("Multi-AD-Architecture"){
-          sh 'pwd'
-          sh 'ls -l'
-          sh 'source ./env_vars'
-          sh 'sleep 10'
-          sh 'terraform init'
+        try {
+          dir("Multi-AD-Architecture"){
+            sh 'pwd'
+            sh 'ls -l'
+            sh 'source ./env_vars'
+            sh 'sleep 10'
+            sh 'terraform init'
+            sh 'sleep 5'
+            sh 'terraform plan'
+          
+          }
+        } catch (error) {
           sh 'sleep 5'
           sh 'terraform plan'
           
-        }
-      }      
-    }
-
-    stage('Approval') {
-      steps {
-        script {
-          def userInput = input(id: 'confirm', message: 'Apply Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Apply terraform', name: 'confirm'] ])
+          stage('Approval') {
+            steps {
+              script {
+              def userInput = input(id: 'confirm', message: 'Apply Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Apply terraform', name: 'confirm'] ])
         }
       }
     }
+        }
+
+        
+      }      
+    }
+
+    
 
    /* stage('TF Apply') {
       steps {
