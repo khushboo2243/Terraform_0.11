@@ -5,8 +5,12 @@ pipeline {
   /*environment {
    // SVC_ACCOUNT_KEY = credentials('terraform-auth')
   }*/
-  stages {
+  environment {
+        TF_VAR_bastion_ssh_private_key = '/var/lib/jenkins/workspace/dotssh/id_rsa'
+        bastion_ssh_private_key    = '/var/lib/jenkins/workspace/dotssh/id_rsa'
+  }
 
+  stages {
    stage('Checkout') {
       steps {
         checkout scm
@@ -20,7 +24,7 @@ pipeline {
           sh 'pwd'
           sh 'whoami'
           sh 'env'
-          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
+          //sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
          // sh './var/lib/jenkins/workspace/Terrafomr_0.11/source_env.sh'
 
         }
