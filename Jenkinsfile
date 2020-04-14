@@ -20,19 +20,21 @@ pipeline {
           sh 'pwd'
           sh 'whoami'
           sh 'env'
-          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
+          sh 'source env_vars'
+          sh 'sleep 10'
          //sh 'sudo ./var/lib/jenkins/workspace/Terrafomr_0.11/source_env.sh'
 
         }
         
       }
     } 
-   /* stage('Source environment'){
+    stage('Source environment'){
       steps {
-        sh 'source env_vars'
-     
+        dir("/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture"){
+          sh 'source env_vars'
+        }
       }
-    }*/ 
+    } 
     stage('TF Plan') {
       steps {
         dir("Multi-AD-Architecture"){
