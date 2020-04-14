@@ -41,11 +41,11 @@ pipeline {
     stage('TF Plan') {
       steps {
         dir("Multi-AD-Architecture"){
-          sh 'pwd'
+          sh 'pwd && history'
           sh 'ls -l'
           //sh 'source ./env_vars'
-           sh 'pwd'
-          sh 'whoami'
+           sh 'pwd && history'
+          sh 'whoami && history'
           sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars && env && chmod 600 /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/bastion_private_ssh_key && terraform init && terraform plan'
           sh 'sleep 10'
           //sh 'env'
