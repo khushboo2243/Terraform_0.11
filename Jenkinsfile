@@ -43,7 +43,7 @@ pipeline {
         dir("Multi-AD-Architecture"){
           sh 'pwd'
           sh 'ls -l'
-          sh 'source env_vars'
+          sh 'source ./env_vars'
           sh 'sleep 10'
           sh 'terraform init'
           sh 'sleep 5'
