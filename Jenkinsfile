@@ -38,7 +38,7 @@ pipeline {
         dir("Multi-AD-Architecture"){
           sh 'pwd'
           sh 'terraform init'
-          sh 'terraform plan'
+          sh 'terraform plan -input=true'
         }
       }      
     }
