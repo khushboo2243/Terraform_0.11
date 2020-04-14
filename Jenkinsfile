@@ -19,9 +19,10 @@ pipeline {
         dir("/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture"){
           sh 'pwd'
           sh 'whoami'
-          sh 'env'
           sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
           sh 'sleep 10'
+          sh 'env'
+          sh 'chmod 600 /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/bastion_private_ssh_key'
          //sh 'sudo ./var/lib/jenkins/workspace/Terrafomr_0.11/source_env.sh'
 
         }
@@ -31,11 +32,11 @@ pipeline {
     stage('Source environment'){
       steps {
         dir("/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture"){
-          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
+          sh '/var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars'
         }
       }
     }
-
+    
     stage('TF Plan') {
       steps {
         dir("Multi-AD-Architecture"){
