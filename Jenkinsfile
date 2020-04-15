@@ -46,7 +46,7 @@ pipeline {
           //sh 'source ./env_vars'
            sh 'pwd && history'
           sh 'whoami && history'
-          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars && env && chmod 600 /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/bastion_private_ssh_key && terraform init && terraform plan && terraform apply -auto-approve'
+          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars && env && chmod 600 /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/bastion_private_ssh_key && terraform init && terraform plan'
           sh 'sleep 10'
           //sh 'env'
           //sh 'chmod 600 /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/bastion_private_ssh_key'
@@ -59,7 +59,7 @@ pipeline {
       }      
     }
 
-  /*  stage('Approval') {
+    stage('Approval') {
       steps {
         script {
           def userInput = input(id: 'confirm', message: 'Apply Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Apply terraform', name: 'confirm'] ])
@@ -69,9 +69,11 @@ pipeline {
 
     stage('TF Apply') {
       steps {
+        dir("Multi-AD-Architecture"){
           sh 'terraform apply -auto-approve'
+        }
       } 
-    } */
+    } 
 
   } 
 
