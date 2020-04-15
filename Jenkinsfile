@@ -70,7 +70,7 @@ pipeline {
     stage('TF Apply') {
       steps {
         dir("Multi-AD-Architecture"){
-          sh 'terraform apply -auto-approve'
+          sh 'source /var/lib/jenkins/workspace/Terrafomr_0.11/Multi-AD-Architecture/env_vars && terraform apply -auto-approve'
         }
       } 
     } 
